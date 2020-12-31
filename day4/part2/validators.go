@@ -6,10 +6,10 @@ import (
 )
 
 var (
-	heightRegex = regexp.MustCompile("hgt:([0-9]{2,3})(cm|in)")
-	hairColorRegex = regexp.MustCompile("hcl:#([0-9a-f]{6})")
-	eyeColorRegex = regexp.MustCompile("ecl:(amb|blu|brn|gry|grn|hzl|oth)")
-	passportIDRegex = regexp.MustCompile("pid:[0-9]{9}(\\W|$)")
+	heightRegex = regexp.MustCompile(`hgt:([0-9]{2,3})(cm|in)`)
+	hairColorRegex = regexp.MustCompile(`hcl:#([0-9a-f]{6})`)
+	eyeColorRegex = regexp.MustCompile(`ecl:(amb|blu|brn|gry|grn|hzl|oth)`)
+	passportIDRegex = regexp.MustCompile(`pid:[0-9]{9}(\W|$)`)
 )
 
 func createYearValidator(field string, min int, max int) Validator {

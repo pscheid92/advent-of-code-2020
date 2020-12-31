@@ -36,7 +36,7 @@ func (w World) CountActive() int {
 
 func (w World) GatherActivePoints() []Coordinate {
 	activePoints := make([]Coordinate, 0, len(w.activePoints))
-	for c, _ := range w.activePoints {
+	for c := range w.activePoints {
 		activePoints = append(activePoints, c)
 	}
 	return activePoints
@@ -45,7 +45,7 @@ func (w World) GatherActivePoints() []Coordinate {
 func (w World) SimulateSteps(steps int) {
 	for i := 0; i < steps; i++ {
 		// phase 1: visit points and collect change instructions
-		changeInstructions := make(map[Coordinate]State, 0)
+		changeInstructions := make(map[Coordinate]State)
 		for _, point := range w.GatherInterestingPoints() {
 			state := w.Get(point)
 			count := w.CountActiveNeighbors(point)
@@ -102,7 +102,7 @@ func (w World) GatherInterestingPoints() []Coordinate {
 	// every active point and their neighbors are points of interest (poi).
 	// every point that is more than one point afar, from any other active point cannot change. therefore, we ignore them here.
 	poi := make(map[Coordinate]byte)
-	for current, _ := range w.activePoints {
+	for current := range w.activePoints {
 		poi[current] = 0
 		for _, neighbor := range GetNeighborCoordinates(current) {
 			poi[neighbor] = 0
@@ -111,7 +111,7 @@ func (w World) GatherInterestingPoints() []Coordinate {
 
 	// collect distinct poi coordinates from map
 	distinctPoints := make([]Coordinate, 0, len(poi))
-	for p, _ := range poi {
+	for p := range poi {
 		distinctPoints = append(distinctPoints, p)
 	}
 	return distinctPoints

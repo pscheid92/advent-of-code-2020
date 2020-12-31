@@ -94,8 +94,6 @@ func IsValidWord(word string, lookup map[string]StringSet, startRule string) boo
 		}
 	}
 
-	//tmpPrintTable(table)
-
 	// word is valid if last field in triangle contains start rule
 	rules := table[n-1][0]
 	return rules.Contains(startRule)
@@ -120,13 +118,4 @@ func BuildCrossProduct(xs StringSet, ys StringSet) []string {
 		}
 	}
 	return result
-}
-
-func tmpPrintTable(table [][]StringSet) {
-	for _, x := range table {
-		for _, y := range x {
-			fmt.Printf("%60s ", y)
-		}
-		fmt.Println()
-	}
 }

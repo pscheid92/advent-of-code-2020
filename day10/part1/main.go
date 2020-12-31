@@ -34,11 +34,7 @@ func CountJoltDifferences(jolts []int) map[int]int {
 
 	for i := 1; i < n+2; i++ {
 		diff := jolts[i] - jolts[i-1]
-		if _, ok := differences[diff]; ok {
-			differences[diff]++
-		} else {
-			differences[diff] = 1
-		}
+		differences[diff]++
 	}
 
 	return differences

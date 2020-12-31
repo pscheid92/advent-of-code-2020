@@ -11,8 +11,8 @@ type InstructionCode string
 
 const (
 	NoOp       InstructionCode = "nop"
-	Accumulate                 = "acc"
-	Jump                       = "jmp"
+	Accumulate InstructionCode = "acc"
+	Jump       InstructionCode = "jmp"
 )
 
 type Instruction struct {

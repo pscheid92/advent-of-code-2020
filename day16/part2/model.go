@@ -167,7 +167,7 @@ func (m Matrix) PrintString() {
 	}
 
 	fmt.Printf("%30s ", "Σ")
-	for i, _ := range m.Columns {
+	for i := range m.Columns {
 		sum, _ := m.ColSum(i)
 		fmt.Printf("%3d ", sum)
 	}

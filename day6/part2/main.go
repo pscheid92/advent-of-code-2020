@@ -38,7 +38,7 @@ func main() {
 //
 func CountCommonAnswers(group []string) int {
 	// count occurrences of answers among people in group
-	letterCounter := make(map[rune]int, 0)
+	letterCounter := make(map[rune]int)
 	for _, line := range group {
 		for _, c := range line {
 			// ignore invalid symbols
@@ -46,11 +46,7 @@ func CountCommonAnswers(group []string) int {
 				continue
 			}
 
-			if _, ok := letterCounter[c]; ok {
-				letterCounter[c]++
-			} else {
-				letterCounter[c] = 1
-			}
+			letterCounter[c]++
 		}
 	}
 

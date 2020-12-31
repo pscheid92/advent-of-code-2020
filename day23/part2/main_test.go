@@ -12,7 +12,7 @@ func TestProgram(t *testing.T) {
 	expectedOutput := 149245887792
 
 	currentGame, min, max, lookup := CreateGame(input, size)
-	currentGame = PlayNMoves(moves, currentGame, min, max, lookup)
+	_ = PlayNMoves(moves, currentGame, min, max, lookup)
 
 	output, err := CalculateSolutionCode(lookup)
 	assert.NoError(t, err)

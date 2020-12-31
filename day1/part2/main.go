@@ -63,7 +63,7 @@ func FindTreeEntriesSummingTo(entries []int, target int) ([3]int, bool) {
 	// overall complexity O(n^2)
 
 	// O(n log n)
-	sort.Sort(sort.IntSlice(entries))
+	sort.Ints(entries)
 
 	// O(n) for loop and O(n) for work
 	for j := len(entries) - 1; j > 0; j-- {

@@ -30,7 +30,7 @@ func main() {
 }
 
 func FindEntriesSummingTo(entries []int, target int) ([2]int, bool) {
-	sort.Sort(sort.IntSlice(entries))
+	sort.Ints(entries)
 
 	i := 0
 	j := len(entries) - 1

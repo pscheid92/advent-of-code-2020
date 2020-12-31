@@ -13,7 +13,7 @@ func main() {
 	moves := 10_000_000
 
 	currentCup, min, max, lookup := CreateGame(startSequence, size)
-	currentCup = PlayNMoves(moves, currentCup, min, max, lookup)
+	_ = PlayNMoves(moves, currentCup, min, max, lookup)
 
 	// generate output aka solution code
 	output, err := CalculateSolutionCode(lookup)

@@ -32,7 +32,7 @@ func (s StringSet) Contains(x string) bool {
 
 func (s StringSet) GetAll() []string {
 	elements := make([]string, 0, len(s.data))
-	for x, _ := range s.data {
+	for x := range s.data {
 		elements = append(elements, x)
 	}
 	return elements
@@ -45,7 +45,7 @@ func (s StringSet) Len() int {
 func (s StringSet) String() string {
 	// gather keys and sort them
 	keys := make([]string, 0, len(s.data))
-	for k, _ := range s.data {
+	for k := range s.data {
 		keys = append(keys, k)
 	}
 	sort.Strings(keys)

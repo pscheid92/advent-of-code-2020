@@ -29,12 +29,12 @@ type Command rune
 
 const (
 	MoveWaypointNorth   Command = 'N'
-	MoveWaypointSouth           = 'S'
-	MoveWaypointWest            = 'W'
-	MoveWaypointEast            = 'E'
-	RotateWaypointLeft          = 'L'
-	RotateWaypointRight         = 'R'
-	MoveForward                 = 'F'
+	MoveWaypointSouth   Command = 'S'
+	MoveWaypointWest    Command = 'W'
+	MoveWaypointEast    Command = 'E'
+	RotateWaypointLeft  Command = 'L'
+	RotateWaypointRight Command = 'R'
+	MoveForward         Command = 'F'
 )
 
 type Instruction struct {
